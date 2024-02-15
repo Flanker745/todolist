@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* color: white; */
+    }
+
+    .main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        flex-direction: column;
+        gap: 20px;
+        background-image: linear-gradient(to right, #805ad5, #ff6b6b);
+
+
+    }
+
+    .inp {
+        height: 50px;
+        width: 65%;
+
+    }
+
+    button {
+        width: 9.09%;
+        /* padding: 15px 0; */
+        height: 47px;
+
+
+    }
+
+    input {
+        width: 90%;
+        height: 50px;
+        border-radius: 10px;
+        
+        /* padding: 15px 0; */
+        /* border: 5px solid green; */
+    }
+
+    .ad {
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .showData {
+        width: 100%;
+        color: white;
+        display: flex;
+        margin-bottom: 10px;
+
+
+    }
+
+    h1 {
+        width: 90%;
+        height: 50px;
+        display: flex;
+        border: 1px solid white;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    i {
+        width: 8%;
+        border-radius: 10px;
+        margin-left: 10px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        background-color: white;
+        color: black;
+
+    }
+
+    .show {
+        width: 65%;
+    }
+    h2{
+        color: ;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <h2 id="empt"></h2>
+        <div class="inp">
+            <input type="text" name="" class="input" placeholder="Type Here">
+            <button class="ad">Add</button>
+        </div>
+        <div class="show">
+            
+        </div>
+    </div>
+</body>
+<script src="jquery.jq"></script>
+<script>
+    // var a=$(".input").val()
+    $(".ad").click(() => {
+        var a = $(".input")
+        if(a.val()==""){
+            $("#empt").text("Fill data")
+
+            
+        }
+        else{
+            $(".show").append(`<div class="showData">
+                <h1>${a.val()}</h1>
+                <i >&times;</i>
+            </div>`)
+        a.val("")
+        $("#empt").text("")
+        $("i").click(function (){
+        $(this).parent().remove()
+    })
+        }
+    
+
+    })
+</script>
+
+</html>
